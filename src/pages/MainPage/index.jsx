@@ -1,17 +1,19 @@
 import React from "react";
-
 import { Container } from "./styles";
+import githubLogo from '../../assets/images/github-svgrepo-com (1).svg'; // Caminho correto do SVG
 
-const MainPage = () => {
+function MainPage() {
+  return (
     <Container>
       <img
-        src="https://devsamurai-materials.s3.amazonaws.com/templates/avatar-gradient-dark.svg"
+        src={githubLogo}
         height="256"
-        alt="Dev Samurai"
+        alt="GitHub Logo"
       />
-      <h1>Fala Samurai!</h1>
+      <h1>API Github</h1>
       <p>Esse é o template typescript básico da Dev Samurai para React.</p>
     </Container>
-};
+  );
+}
 
 export default MainPage;
