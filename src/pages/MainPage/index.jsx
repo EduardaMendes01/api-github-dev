@@ -1,9 +1,13 @@
-import React from "react";
+import React, {useState} from 'react';
 import { IoMdSearch } from "react-icons/io";
+
 import { Container, Form, Input, Button } from "./styles";
-import githubLogo from '../../assets/images/github-svgrepo-com (1).svg'; // Caminho correto do SVG
+
+import githubLogo from '../../assets/images/github-svgrepo-com (1).svg';
 
 function MainPage() {
+  const [login, setLogin] = useState('');
+
   return (
     <Container>
       <img
@@ -13,9 +17,13 @@ function MainPage() {
       />
       <h1>API Github</h1>
       <Form>
-        <Input placeholder="user" />
+        <Input
+        placeholder="username"
+        value={login}
+        onChange={(event) =>
+        setLogin(event.target.value)}/>
         <Button>
-          <IoMdSearch size={42} />
+          <IoMdSearch size={42} to={`/${login}/repositories`} />
         </Button>
       </Form>
       <Form/>

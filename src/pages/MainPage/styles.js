@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { Link } from 'react-router-dom';
 
 export const Container = styled.div`
   display: flex;
@@ -27,13 +28,14 @@ export const Input = styled.input`
   font-size: 24px;
   margin-right: 24px;
   padding: 0 24px;
+  color: #D44D5C;
 
   &::placeholder {
     color: ${(props) => props.theme.colors.indianRed}
   }
 `;
 
-export const Button = styled.button`
+export const Button = styled(Link)`
   display: flex;
   align-items: center;
   justify-content: center;
@@ -41,10 +43,10 @@ export const Button = styled.button`
   background: transparent;
   width: 80px;
   height: 62px;
-  border: 3px solid ${(props) => props.theme.colors.indianRed};
+  border: 3px solid ${(props) => props.theme.colors.white};
   transition: background 0.3s;
 
   &:hover {
-    background: ${(props) => props.theme.colors.Linen};
+    background: ${(props) => props.theme.colors.indianRed};
   }
 `;
