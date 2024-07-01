@@ -1,5 +1,6 @@
 import React from "react";
-import { Container, Form } from "./styles";
+import { IoMdSearch } from "react-icons/io";
+import { Container, Form, Input, Button } from "./styles";
 import githubLogo from '../../assets/images/github-svgrepo-com (1).svg'; // Caminho correto do SVG
 
 function MainPage() {
@@ -11,7 +12,13 @@ function MainPage() {
         alt="GitHub Logo"
       />
       <h1>API Github</h1>
-      <Form    />
+      <Form>
+        <Input placeholder="user" />
+        <Button>
+          <IoMdSearch size={42} />
+        </Button>
+      </Form>
+      <Form/>
     </Container>
   );
 }

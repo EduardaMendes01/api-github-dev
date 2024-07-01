@@ -29,6 +29,22 @@ export const Input = styled.input`
   padding: 0 24px;
 
   &::placeholder {
-    
+    color: ${(props) => props.theme.colors.indianRed}
+  }
+`;
+
+export const Button = styled.button`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: transparent;
+  width: 80px;
+  height: 62px;
+  border: 3px solid ${(props) => props.theme.colors.indianRed};
+  transition: background 0.3s;
+
+  &:hover {
+    background: ${(props) => props.theme.colors.Linen};
   }
 `;
