@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const Container = styled.main `
   display: flex;
@@ -10,14 +10,14 @@ export const Container = styled.main `
 `;
 
 export const Sidebar = styled.aside`
-  background: ${(props) => props.theme.colors.wine};
-  min-width: 8rem;
+  background: ${(props) => props.theme.colors.Licorice};
+  min-width: 20rem;
   min-height: 100vh;
   overflow-y: hidden;
 `;
 
 export const Main = styled.section`
-  background: ${(props) => props.theme.colors.paleDogwood};
+  background: ${(props) => props.theme.colors.indianRed};
   width: 100%;
   height: 100vh;
   padding: 40px;

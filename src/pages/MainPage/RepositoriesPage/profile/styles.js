@@ -17,7 +17,7 @@ export const Header = styled.div`
 `;
 
 export const Avatar = styled.img`
-  align-items: center;
+  align-self: center;
   border-radius: 50%;
   width: 70%;
   margin-bottom: 1rem;
@@ -31,12 +31,13 @@ export const Avatar = styled.img`
 `;
 
 export const Login = styled.h1`
-  font: ${(props) => props.theme.fontSizes.base};
+  font: ${(props) => props.theme.fontSize.base};
 `;
 
 export const Name = styled.h2`
-  font: ${(props) => props.theme.fontSizes.md};
+  font: ${(props) => props.theme.fontSize.md};
   font-weight: normal;
+ 
 
   @media screen and (max-width: ${(props) => props.theme.breakpoints.md}) {
     display: none;

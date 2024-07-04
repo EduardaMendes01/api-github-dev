@@ -1,8 +1,8 @@
-import React from 'react'
-
+import React from 'react';
 import { Container, Header, Avatar, Login, Name } from './styles';
 
 function Profile() {
+  return (
     <Container>
       <Header>
         <Avatar src='https://avatars.githubusercontent.com/u/163479227?v=4'/>
@@ -10,8 +10,9 @@ function Profile() {
         <Name>Eduarda Mendes</Name>
       </Header>
     </Container>
-
+  );
 };
 
-export default Profile
+export default Profile;
+
 
