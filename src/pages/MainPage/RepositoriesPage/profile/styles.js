@@ -8,7 +8,7 @@ export const Container = styled.div`
 export const Header = styled.div`
   display: flex;
   flex-direction: column;
-  padding: 1rem 0;
+  padding: 12px 0;
 
   @media screen and (max-width: ${(props) => props.theme.breakpoints.md}) {
     flex-direction: row;
@@ -45,7 +45,7 @@ export const Name = styled.h2`
 `;
 
 export const Inner = styled.div`
-  padding: 1rem;
+  padding: 12px;
 
   @media screen and (max-width: ${(props) => props.theme.breakpoints.md}) {
     display: none;
@@ -55,7 +55,8 @@ export const Inner = styled.div`
 export const Data = styled.p`
   display: flex;
   align-items: center;
-  line-height: 1.5;
+  line-height: 1;
+  
 
   svg {
     margin-right: 10px;

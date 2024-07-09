@@ -13,7 +13,7 @@ function Profile() {
         <Name>Eduarda Mendes</Name>
       </Header>
       <Inner>
-        <Data>
+        <Data class='info'>
           <MdGroup size={20} />
           30&nbsp;<i>followers</i>&nbsp;&middot;&nbsp;10&nbsp;<i>Following</i>
         </Data>

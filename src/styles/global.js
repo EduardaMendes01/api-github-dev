@@ -8,7 +8,7 @@ export const GlobalStyle = createGlobalStyle`
     background: ${(props) => props.theme.colors.Licorice};
     color: ${(props) => props.theme.colors.gray600};
     font-family: ${(props) => props.theme.fontFamily.sans};
-    
+
   }
 
   h1, h2, h3, h4, h5, h6, p {
@@ -16,4 +16,9 @@ export const GlobalStyle = createGlobalStyle`
     font-weight: bold;
     color: ${(props) => props.theme.colors.wine};
   }
+
+  h1, h2{
+    margin: 10px;
+  }
 `;
+
