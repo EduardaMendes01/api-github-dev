@@ -1,7 +1,7 @@
 import React from 'react';
 
 import Profile from './profile';
-import Filter from './filter/styled';
+import Filter from './filter/index';
 
 import {Container, Sidebar, Main} from './styles';
 

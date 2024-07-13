@@ -1,4 +1,5 @@
 import React from 'react';
+import { Container, Selector, Cleaner } from './styled';
 
 function Filter() {
   const langs =[
@@ -7,10 +8,20 @@ function Filter() {
     {name: 'Ruby', count: 5, color: 'red'}
   ];
 
+  const selectors = langs.map(({name, count, color}) => (
+    <Selector key={name.toLowerCase} color={color}>
+      <span>{name}</span>
+      <span>{count}</span>
+    </Selector>
+  ));
+
   return (
-    <h1>
-      Filter
-    </h1>
+    <Container>
+      {selectors}
+      <Cleaner>
+        Clean
+      </Cleaner>
+    </Container>
   )
 }
 
