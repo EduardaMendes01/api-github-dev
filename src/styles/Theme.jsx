@@ -19,7 +19,7 @@ export const theme = {
     paleDogwood: "#E3B5A4",
     Linen: "#F5E9E2",
     Licorice: "#0B0014",
-    indianRed: "#D44D5C"
+    indianRed: "#D44D5C",
   },
   fontFamily: {
     heading: ["IBM Plex Sans", "sans-serif"].join(","),

@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const Container = styled.main `
+export const Container = styled.main`
   display: flex;
   min-height: 100vh;
 
@@ -14,6 +14,16 @@ export const Sidebar = styled.aside`
   min-width: 20rem;
   min-height: 100vh;
   overflow-y: hidden;
+
+  @media screen and (max-width: ${(props) => props.theme.breakpoints.md}) {
+    min-height: auto;
+    height: auto;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 12px;
+  }
 `;
 
 export const Main = styled.section`

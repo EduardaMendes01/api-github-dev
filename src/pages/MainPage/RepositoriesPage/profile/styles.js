@@ -1,6 +1,5 @@
 import styled from 'styled-components';
 
-
 export const Container = styled.div`
   padding: 1rem;
 `;
@@ -8,6 +7,7 @@ export const Container = styled.div`
 export const Header = styled.div`
   display: flex;
   flex-direction: column;
+  align-items: center;
   padding: 12px 0;
 
   @media screen and (max-width: ${(props) => props.theme.breakpoints.md}) {
@@ -19,7 +19,7 @@ export const Header = styled.div`
 export const Avatar = styled.img`
   align-self: center;
   border-radius: 50%;
-  width: 70%;
+  width: 50%;
   margin-bottom: 1rem;
 
   @media screen and (max-width: ${(props) => props.theme.breakpoints.md}) {
@@ -30,15 +30,21 @@ export const Avatar = styled.img`
   }
 `;
 
+export const InfoContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+`;
+
 export const Login = styled.h1`
   font: ${(props) => props.theme.fontSize.base};
+  margin: 0;
 `;
 
 export const Name = styled.h2`
   font: ${(props) => props.theme.fontSize.md};
   font-weight: normal;
-
-
+  margin: 8px 0 0 0;
   @media screen and (max-width: ${(props) => props.theme.breakpoints.md}) {
     display: none;
   }
@@ -56,9 +62,10 @@ export const Data = styled.p`
   display: flex;
   align-items: center;
   line-height: 1;
-  
+  margin-left: 0;
+  margin-top: 1px;
 
   svg {
-    margin-right: 10px;
+    margin-right: 3px;
   }
 `;

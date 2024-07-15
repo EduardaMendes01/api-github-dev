@@ -6,7 +6,18 @@ export const Container = styled.div`
   gap: 2rem;
   margin-top: 2rem;
 
-  @media screen and (max-width: ${(props) => props.theme.breakpoints.sm}){
-    grid-template-columns:auto;
+  @media screen and (max-width: ${(props) => props.theme.breakpoints.lg}) {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  @media screen and (max-width: ${(props) => props.theme.breakpoints.md}) {
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+  }
+
+  @media screen and (max-width: ${(props) => props.theme.breakpoints.sm}) {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    margin-top: 1rem;
+    
   }
 `;
