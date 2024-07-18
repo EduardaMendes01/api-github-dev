@@ -7,10 +7,20 @@ import Repositories from './repositories';
 import {Container, Sidebar, Main} from './styles';
 
 function RepositoriesPage() {
+  const user = {
+    login: "EduardaMendes01",
+    avatar_url: "https://avatars.githubusercontent.com/u/163479227?v=4",
+    "followers": 96,
+    "following": 96,
+    "company": null,
+    "blog": "",
+    "location": "São Paulo, Brazil",
+  }
+
   return (
     <Container>
       <Sidebar>
-        <Profile />
+        <Profile  user={user}/>
         <Filter />
       </Sidebar>
       <Main>
