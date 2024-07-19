@@ -1,37 +1,56 @@
+/* eslint-disable react/require-default-props */
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import { MdGroup, MdLocationCity, MdWork, MdLink } from 'react-icons/md';
 
 import { Container, Header, Avatar, Login, Name, Inner, Data } from './styles';
 
-function Profile() {
+function Profile({ user }) {
   return (
     <Container>
       <Header>
-        <Avatar src='https://avatars.githubusercontent.com/u/163479227?v=4'/>
-        <Login>EduardaMendes01</Login>
-        <Name>Eduarda Mendes</Name>
+        <Avatar src={user.avatar_url}/>
+        <Login>{user.login}</Login>
+        <Name>{user.name}</Name>
       </Header>
       <Inner>
         <Data class='info'>
           <MdGroup size={20} />
-          30&nbsp;<i>followers</i>&nbsp;&middot;&nbsp;10&nbsp;<i>Following</i>
+          {user.following}
+          &nbsp;<i>followers</i>&nbsp;&middot;&nbsp;{user.followers}&nbsp;<i>Following</i>
         </Data>
-        <Data>
-          <MdWork size={20} />
-          Company
-        </Data>
+        {user.company &&
+            (
+            <Data>
+            <MdWork size={20} />
+            {user.company}
+          </Data>)
+          }
         <Data>
           <MdLocationCity size={20} />
-          São Paulo
+          {user.location}
         </Data>
         <Data>
           <MdLink />
-          <a href='https://www.linkedin.com/in/eduarda-mendes01/'>Linkedin Profile</a>
+          <a href={`\\${user.blog}`}>{user.blog</a>
         </Data>
       </Inner>
     </Container>
   );
+};
+
+Profile.propTypes = {
+  user: PropTypes.shape({
+    login: PropTypes.string.isRequired,
+    name: PropTypes.string.isRequired,
+    avatar_url: PropTypes.string.isRequired,
+    "followers": PropTypes.number.isRequired,
+    "following": PropTypes.number.isRequired,
+    "company": PropTypes.string,
+    "blog": PropTypes.string,
+    "location": PropTypes.string,
+  }).isRequired,
 };
 
 export default Profile;
