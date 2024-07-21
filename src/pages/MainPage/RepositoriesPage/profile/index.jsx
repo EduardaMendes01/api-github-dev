@@ -27,14 +27,22 @@ function Profile({ user }) {
             {user.company}
           </Data>)
           }
-        <Data>
-          <MdLocationCity size={20} />
-          {user.location}
-        </Data>
-        <Data>
-          <MdLink />
-          <a href={`\\${user.blog}`}>{user.blog</a>
-        </Data>
+          {user.company &&
+          (
+          <Data>
+            <MdLocationCity size={20} />
+            {user.location}
+          </Data>)
+          }
+          {user.blog &&
+          (
+          <Data>
+            <MdLink />
+            <a href={`\\${user.blog}`}>{user.blog}</a>
+          </Data>
+          )
+          }
+
       </Inner>
     </Container>
   );
