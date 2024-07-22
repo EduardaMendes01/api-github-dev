@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+
 import { Container, Selector, Cleaner } from './styled';
 
 function Filter({ languages }) {

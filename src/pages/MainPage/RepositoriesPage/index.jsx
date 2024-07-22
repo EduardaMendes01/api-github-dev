@@ -6,6 +6,8 @@ import Repositories from './repositories';
 
 import {Container, Sidebar, Main} from './styles';
 
+import { getLangsFrom } from '../../../services/api';
+
 function RepositoriesPage() {
   const user = {
     login: "EduardaMendes01",
@@ -16,48 +18,49 @@ function RepositoriesPage() {
     "company": null,
     "blog": "https://github.com/EduardaMendes01",
     "location": "São Paulo, Brazil",
-  }
+  };
 
+  // eslint-disable-next-line no-unused-vars
   const repositories = [
-    { name: 'Repo 1' ,
+    {
+      name: 'Repo 1' ,
       description: 'Repo 1' ,
       html_url: 'https://github.com/EduardaMendes01/todo',
-      language: 'Javacsript'
+      language: 'Javascript'
     },
-    { name: 'Repo 2' ,
+    {
+      name: 'Repo 2' ,
       description: 'Description' ,
       html_url: 'https://github.com/EduardaMendes01/todo-list-typescript',
       language: 'Typescript'
     },
-    { name: 'Repo 3' ,
+    {
+      name: 'Repo 3' ,
       description: 'Description' ,
       html_url: 'https://github.com/EduardaMendes01/website-3d-effect-cats',
-      language: 'Javacsript'
+      language: 'Ruby'
     },
-    { name: 'Repo 4' ,
+    {
+      name: 'Repo 4' ,
       description: 'Description' ,
       html_url: 'https://github.com/EduardaMendes01/website-3d-effect-cats',
       language: 'Python'
     },
-    { name: 'Repo 5' ,
+    {
+      name: 'Repo 5' ,
       description: 'Description' ,
       html_url: 'https://github.com/EduardaMendes01/website-3d-effect-cats',
-      language: 'Javacsript'
+      language: 'Javascript'
     },
-    { name: 'Repo 6' ,
+    {
+      name: 'Repo 6' ,
       description: 'Description' ,
       html_url: 'https://github.com/EduardaMendes01/website-3d-effect-cats',
-      language: 'Javacsript'
+      language: 'Javascript'
     },
   ];
 
-  // Calculo de filters
-
-  const languages =[
-    {name: 'Javascript', count: 5, color: 'yellow'},
-    {name: 'Python', count: 5, color: 'blue'},
-    {name: 'Ruby', count: 5, color: 'red'}
-  ];
+  const languages = getLangsFrom(repositories);
 
   return (
     <Container>
