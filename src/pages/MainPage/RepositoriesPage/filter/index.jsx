@@ -3,10 +3,15 @@ import PropTypes from 'prop-types';
 
 import { Container, Selector, Cleaner } from './styled';
 
-function Filter({ languages }) {
+function Filter({ languages, currentLanguage, onClick}) {
 
   const selectors = languages.map(({name, count, color}) => (
-    <Selector key={name.toLowerCase} color={color}>
+    <Selector
+      key={name.toLowerCase}
+      color={color}
+      className={currentLanguage === name ? 'selected' : ''}
+      onClick={() => onClick && onClick(name)}
+      >
       <span>{name}</span>
       <span>{count}</span>
     </Selector>
@@ -19,8 +24,13 @@ function Filter({ languages }) {
         Clean
       </Cleaner>
     </Container>
-  )
-}
+  );
+};
+
+Filter.defaultProps = {
+  currentLanguage: null,
+  onClick: null,
+};
 
 Filter.propTypes = {
   languages: PropTypes.arrayOf(
@@ -30,6 +40,8 @@ Filter.propTypes = {
       color: PropTypes.string,
     }).isRequired
   ).isRequired,
+  currentLanguage: PropTypes.string,
+  onClick: PropTypes.string,
 };
 
 export default Filter;
