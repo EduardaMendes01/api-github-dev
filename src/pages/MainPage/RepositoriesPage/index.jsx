@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import Profile from './profile';
 import Filter from './filter/index';
@@ -78,7 +78,10 @@ function RepositoriesPage() {
     <Container>
       <Sidebar>
         <Profile  user={user}/>
-        <Filter languages={languages} currentLanguage={currentLanguage} onClick={onFilterClick} />
+        <Filter
+        languages={languages}
+        currentLanguage={currentLanguage}
+        onClick={onFilterClick} />
       </Sidebar>
       <Main>
         <Repositories  repositories={repositories}/>

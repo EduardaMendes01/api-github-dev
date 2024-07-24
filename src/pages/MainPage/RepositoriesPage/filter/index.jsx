@@ -20,7 +20,7 @@ function Filter({ languages, currentLanguage, onClick}) {
   return (
     <Container>
       {selectors}
-      <Cleaner>
+      <Cleaner onClick={() => onClick && onClick(undefined)}>
         Clean
       </Cleaner>
     </Container>
@@ -41,7 +41,7 @@ Filter.propTypes = {
     }).isRequired
   ).isRequired,
   currentLanguage: PropTypes.string,
-  onClick: PropTypes.string,
+  onClick: PropTypes.func,
 };
 
 export default Filter;
