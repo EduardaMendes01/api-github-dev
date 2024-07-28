@@ -8,6 +8,8 @@ const api = axios.create({
 
 export const getUser = async (login) => api.get(`/users/${login}`);
 
+export const getRepos = async (login) => api.get(`/users/${login}/repos`);
+
 export default api;
 
 export const getLangsFrom = (repositories) => {
