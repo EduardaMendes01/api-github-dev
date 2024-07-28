@@ -1,26 +1,43 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 import Profile from './profile';
 import Filter from './filter/index';
 import Repositories from './repositories';
 
-import {Container, Sidebar, Main} from './styles';
+import { Loading, Container, Sidebar, Main} from './styles';
 
-import { getLangsFrom } from '../../../services/api';
+import { getUser, getLangsFrom } from '../../../services/api';
 
 function RepositoriesPage() {
-  const [currentLanguage, setCurrentlanguage] = useState();
 
-  const user = {
-    login: "EduardaMendes01",
-    "name": "Eduarda Mendes",
-    avatar_url: "https://avatars.githubusercontent.com/u/163479227?v=4",
-    "followers": 96,
-    "following": 96,
-    "company": null,
-    "blog": "https://github.com/EduardaMendes01",
-    "location": "São Paulo, Brazil",
-  };
+  const [user, setUser] = useState()
+  const [currentLanguage, setCurrentlanguage] = useState();
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const loadData = async () => {
+      const [userResponse] = await Promise.all([
+        getUser('EduardaMendes01'),
+      ]);
+
+      setUser(userResponse.date);
+
+      setLoading(false);
+    };
+
+    loadData();
+  }, []);
+
+//  const user = {
+//    login: "EduardaMendes01",
+//    "name": "Eduarda Mendes",
+//    avatar_url: "https://avatars.githubusercontent.com/u/163479227?v=4",
+//    "followers": 96,
+//    "following": 96,
+//    "company": null,
+//    "blog": "https://github.com/EduardaMendes01",
+//    "location": "São Paulo, Brazil",
+//  };
 
   // eslint-disable-next-line no-unused-vars
   const repositories = [
@@ -73,6 +90,10 @@ function RepositoriesPage() {
   const onFilterClick = (language) => {
     setCurrentlanguage(language);
   };
+
+  if(loading){
+    return <Loading>Loading...</Loading>
+  }
 
   return (
     <Container>
